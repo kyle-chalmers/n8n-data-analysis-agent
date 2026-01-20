@@ -7,6 +7,21 @@
 
 ---
 
+## TL;DR - 10 Key Takeaways
+
+1. **What it does:** Upload production CSV, get instant AI-powered health report with visualizations and actionable insights
+2. **Built with AI assistance:** Used Claude Code heavily - transparent about this, which adds credibility rather than reducing it
+3. **Architecture:** n8n (visual workflows) + FastAPI + Ollama (local LLM) - your data never leaves your network
+4. **Why "agentic":** LLM decides what analysis to run based on data, not hardcoded steps - adapts to different datasets
+5. **Two tools:** `analyze_data` (failure rates, risk factors, high-risk machines) and `create_chart` (visualizations)
+6. **The loop:** LLM calls tool → gets results → reflects → decides if more needed → repeats until done
+7. **Business value:** Instant insights vs. waiting for manual analysis; non-technical users can ask follow-up questions
+8. **Trade-offs:** Local LLM = privacy + no API costs, but slightly lower quality than GPT-4/Claude
+9. **Where it shines:** Exploratory analysis, flexible input, rapid prototyping. **Where it struggles:** High-throughput, deterministic requirements
+10. **Honest lesson:** Powerful pattern, not magic - value comes from combining LLM reasoning with well-designed tools and domain-specific prompts
+
+---
+
 ## 1. Opening Hook (2-3 minutes)
 
 ### Main Talking Points
