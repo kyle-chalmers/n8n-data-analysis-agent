@@ -22,6 +22,39 @@
 
 ---
 
+## Slide: When You Need This Agent
+
+**Scenario Bullets (for PowerPoint):**
+
+- **Instant insights:** Know which machines failed today before your shift ends — no waiting for analysts.
+- **Natural language questions:** Plant managers ask "What needs maintenance?" and get answers with charts.
+- **Flexible analysis:** Works with any CSV schema — no predefined reports or rigid column requirements.
+
+**Flow Diagram (horizontal - screenshot for slides):**
+
+```
+┌────────┐    ┌────────┐    ┌─────────┐    ┌────────┐    ┌─────────────────────────────────┐    ┌────────────┐
+│  User  │───▶│  n8n   │───▶│ FastAPI │───▶│ Ollama │───▶│          AGENTIC LOOP           │───▶│   Output   │
+│        │    │Webhook │    │ Backend │    │ (LLM)  │    │                                 │    │            │
+│CSV/Chat│    │        │    │         │    │llama3.1│    │  ┌─────────┐     ┌──────────┐  │    │• Summary   │
+└────────┘    └────────┘    └─────────┘    └────────┘    │  │ Decide  │────▶│ Execute  │  │    │• Insights  │
+                                                         │  │what to  │     │ Tools    │  │    │• Charts    │
+                                                         │  │analyze  │◀────│          │  │    │            │
+                                                         │  └─────────┘     └──────────┘  │    └────────────┘
+                                                         │       ▲                        │
+                                                         │       └── Reflect & Repeat ───┘│
+                                                         └─────────────────────────────────┘
+
+                                           TOOLS: analyze_data (failure_rates, risk_factors, high_risk_machines)
+                                                  create_chart (failure_by_type, distributions, comparisons)
+
+                                    ┌──────────────────────────────────────────────────────────────────────┐
+                                    │  100% LOCAL: Data never leaves network • No API costs • Private AI   │
+                                    └──────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## 1. Opening Hook (2-3 minutes)
 
 ### Main Talking Points
