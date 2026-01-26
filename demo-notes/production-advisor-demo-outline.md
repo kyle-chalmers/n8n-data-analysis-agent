@@ -30,7 +30,29 @@
 - **Natural language questions:** Plant managers ask "What needs maintenance?" and get answers with charts.
 - **Flexible analysis:** Works with any CSV schema — no predefined reports or rigid column requirements.
 
-**Flow Diagram (horizontal - screenshot for slides):**
+**Flow Diagram - Business View (screenshot for slides):**
+
+```
+┌──────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+│              │      │              │      │              │      │              │
+│  Upload CSV  │─────▶│  AI Analyzes │─────▶│  Generates   │─────▶│    Ask       │
+│              │      │    Data      │      │   Report     │      │  Follow-ups  │
+│              │      │              │      │              │      │              │
+└──────────────┘      └──────────────┘      └──────────────┘      └──────────────┘
+                             │                     │
+                             ▼                     ▼
+                      ┌─────────────┐       ┌─────────────┐
+                      │ • Failures  │       │ • Summary   │
+                      │ • Risks     │       │ • Charts    │
+                      │ • Trends    │       │ • Actions   │
+                      └─────────────┘       └─────────────┘
+
+              ┌────────────────────────────────────────────────┐
+              │  Runs locally • Your data stays on your network │
+              └────────────────────────────────────────────────┘
+```
+
+**Flow Diagram - Technical View:**
 
 ```
 ┌────────┐    ┌────────┐    ┌─────────┐    ┌────────┐    ┌─────────────────────────────────┐    ┌────────────┐
@@ -47,10 +69,6 @@
 
                                            TOOLS: analyze_data (failure_rates, risk_factors, high_risk_machines)
                                                   create_chart (failure_by_type, distributions, comparisons)
-
-                                    ┌──────────────────────────────────────────────────────────────────────┐
-                                    │  100% LOCAL: Data never leaves network • No API costs • Private AI   │
-                                    └──────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
